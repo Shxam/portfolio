@@ -3,25 +3,142 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-base: #0A0F2C;
+  --bg-void: #050812;
+  --bg-surface: #0E1538;
+  --bg-card: #121B44;
+  --accent-green: #39FF88;
+  --accent-cyan: #00F0FF;
+  --text-main: #F2F2ED;
+  --text-muted: #8A93B2;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-base);
+  color: var(--text-main);
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* Custom Cyber Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050812;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E2A5E;
+  border-radius: 4px;
+  border: 1px solid rgba(57, 255, 136, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #39FF88;
+  box-shadow: 0 0 10px rgba(57, 255, 136, 0.6);
+}
+
+/* Noise overlay utility */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Scanline overlay */
+.scanline-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 998;
+  opacity: 0.02;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+}
+
+/* Vignette */
+.vignette-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 40;
+  background: radial-gradient(circle at 50% 50%, transparent 65%, rgba(5, 8, 18, 0.85) 100%);
+}
+
+/* Glassmorphism panel */
+.glass-panel {
+  background: rgba(14, 21, 56, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(30, 42, 94, 0.6);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(18, 27, 68, 0.85);
+  border-color: rgba(57, 255, 136, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px rgba(57, 255, 136, 0.15);
+}
+
+/* RGB Glitch Split Effect */
+.glitch-hover {
+  position: relative;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+.glitch-hover:hover {
+  color: #39FF88;
+  text-shadow: -1.5px 0 #FF0055, 1.5px 0 #00F0FF;
+}
+
+/* Terminal Cursor Blink */
+.cursor-terminal {
+  display: inline-block;
+  width: 8px;
+  height: 1.1em;
+  background-color: #39FF88;
+  vertical-align: middle;
+  margin-left: 4px;
+  animation: blink 1s step-start infinite;
+  box-shadow: 0 0 8px #39FF88;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
