@@ -15,7 +15,7 @@ export default function ContactSection() {
   const email = "shamsai3469@gmail.com";
   const phone = "(+91) 9849202469";
   const github = "https://github.com/Shxam";
-  const linkedin = "linkedin.com/in/pamarthi-sai-narasimham-28b356400/";
+  const linkedin = "https://www.linkedin.com/in/pamarthi-sai-narasimham-28b356400/";
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(email);
