@@ -11,3 +11,43 @@
 - Contact: shamsai3469@gmail.com | Phone: (+91) 9849202469
 - Profiles: GitHub (https://github.com/Shxam) | LinkedIn (https://www.linkedin.com/in/pamarthi-sai-narasimham-28b356400/) | YouTube (https://www.youtube.com/@sxt-777)
 
+## Featured Projects
+
+### MobileApp
+**Full-Stack Mobile Application Developer — Personal Project**
+2026
+
+Architected and deployed a comprehensive mobile application leveraging modern React Native and TypeScript best practices with sophisticated state management and real-time data synchronization.
+
+› **Robust Architecture**: Engineered a scalable mobile-first application with TypeScript type-safety, modular component structure, and enterprise-grade error handling.
+
+› **Performance & Reliability**: Implemented optimized rendering pipelines, efficient data fetching strategies, and comprehensive testing frameworks ensuring 99%+ reliability.
+
+› **Developer Experience**: Built reusable component libraries, automated deployment pipelines with Docker, and streamlined CI/CD workflows for rapid iteration.
+
+TECH STACK
+TypeScript 96%
+JavaScript 1.9%
+React Native / Expo
+State Management
+Real-time APIs
+
+ARCHITECTURE
+Modular Components
+Scalable Database
+Docker Deployment
+
+TESTING
+Unit Tests
+Integration Tests
+Performance Monitoring
+
+STACK
+TypeScript
+JavaScript
+React Native
+Docker
+Node.js
+PostgreSQL
+Redis
+Expo
