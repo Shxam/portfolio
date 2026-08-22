@@ -33,7 +33,7 @@ export default function Footer({ onOpenTerminal }: { onOpenTerminal: () => void 
             <GithubIcon className="w-4 h-4" />
           </a>
           <a
-            href="https://linkedin.com/in/sai-narasimham"
+            href="https://www.linkedin.com/in/pamarthi-sai-narasimham-28b356400/"
             target="_blank"
             rel="noreferrer"
             className="hover:text-terminal-green transition-colors"
